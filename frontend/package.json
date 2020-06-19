@@ -1,0 +1,18 @@
+{
+  "name": "hack_prepare",
+  "private": true,
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ],
+    "nohoist": []
+  },
+  "dependencies": {
+    "react-native": "0.62.2"
+  },
+  "scripts": {
+    "android": "yarn workspace mobile android",
+    "start:mobile": "yarn workspace mobile start",
+    "start:web": "yarn workspace web start"
+  }
+}
