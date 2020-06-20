@@ -21,4 +21,5 @@ export const TitleCard = styled(Title)`
 
 export const TitleBlue = styled(Title)`
   color: ${({ theme }) => theme.colors.blue};
+  line-height: 19;
 `;
