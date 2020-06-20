@@ -3,6 +3,7 @@ export const Screens = {
   Idea: "idea",
   IdeaCreate: "idea/create",
   Leaderboard: "leaderboard",
+  User: "user",
 };
 
 export const Refs = {

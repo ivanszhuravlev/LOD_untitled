@@ -5,6 +5,7 @@ import { RootNavigator, Root } from "./stacks/Root";
 import { Screens, linking } from "./constants";
 import { HomeStack } from "./stacks/Home";
 import { LeaderboardStack } from "./stacks/Leaderboard";
+import { UserStack } from "./stacks/User";
 
 export const Navigation = () => {
   return (
@@ -12,6 +13,7 @@ export const Navigation = () => {
       <RootNavigator initialRouteName={Screens.Home}>
         <Root.Screen name={Screens.Home} component={HomeStack} />
         <Root.Screen name={Screens.Leaderboard} component={LeaderboardStack} />
+        <Root.Screen name={Screens.User} component={UserStack} />
         {/* <Root.Screen name={Screens.IdeaCreate} component={LeaderboardStack} /> */}
       </RootNavigator>
     </NavigationContainer>
