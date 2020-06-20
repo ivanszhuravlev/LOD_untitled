@@ -5,6 +5,8 @@ import styled from "styled-components/native";
 export const Title = styled(Text)`
   font-size: ${({ theme }) => theme.fontSize.title};
   color: ${({ theme }) => theme.colors.textBlack};
+  background-color: #ffffff;
+  margin-bottom: ${({ theme }) => theme.marginCard};
 `;
 
 // export const H1 = styled(Title)`

@@ -12,7 +12,6 @@ import { getReadableTime } from "../../utils/getReadableTime";
 const IdeaCard = styled(Card)`
   flex-direction: column;
   align-items: flex-start;
-  width: 50%;
   padding: ${({ theme }) => theme.paddingMedium}px;
 `;
 
