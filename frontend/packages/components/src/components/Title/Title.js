@@ -19,3 +19,8 @@ export const TitleCard = styled(Title)`
   color: ${({ theme }) => theme.colors.textGrey};
 `;
 
+export const TitleBig = styled(Title)`
+  font-size: ${({ theme }) => theme.fontSize.bigTitle};
+  color: ${({ theme }) => theme.colors.blue};
+`;
+

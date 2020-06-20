@@ -7,5 +7,6 @@ export const fontSize = {
   // h2: 28,
   // h1: 36,
   button: 16,
-  title: 20
-}
+  title: 20,
+  bigTitle: 24,
+};
