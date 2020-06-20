@@ -1,6 +1,5 @@
 export const Screens = {
   Home: "home",
-  Dashboard: "dashboard",
   Idea: "idea",
   IdeaCreate: "idea/create",
   Leaderboard: "leaderboard",
