@@ -3,7 +3,7 @@ import { View, Text } from "react-native";
 import { Idea } from "../../modules/Idea/Idea";
 import { selectIdea } from "../../redux/selectors/ideas";
 import { useParams } from "../../hooks/use-params";
-import { useSelector } from "../../hooks/use-selector";
+import { useSelector } from "../../hooks/use-selector/use-selector";
 import { useDispatch } from "react-redux";
 import { fetchIdeaAction } from "../../redux/actions/idea";
 

@@ -3,12 +3,11 @@ import styled from "styled-components/native";
 import { View, Text, TouchableOpacity } from "react-native";
 import { Card } from "../../components/Card/Card";
 import { TitleCard } from "../../components/Title/Title";
-import { useNavigation } from "../../hooks/use-navigation";
 import { Screens, getLink } from "../Navigation/constants";
 import { ButtonLink } from "../../components/ButtonLink/ButtonLink";
 
 export const IdeaItem = ({ title, id, ...other }) => {
-  const navigation = useNavigation();
+  // const navigation = useNavigation();
 
   // const handleLinkPress = useCallback(() => {
   //   navigation.navigate(Screens.Idea, { id });
