@@ -5,11 +5,13 @@ import { selectLeaderboardItems } from "../../redux/selectors/leaderboardItems";
 import { useSelector } from "../../hooks/use-selector/use-selector";
 
 export const LeaderboardList = () => {
-    const renderItem = ({ item: { id, name, rating } = {} }) => (
-        <LeaderboardItem id={id} name={name} rating={rating} />
+    const renderItem = ({ item: { id, num, name, rating } = {} }) => (
+        <LeaderboardItem id={id} num={num} name={name} rating={rating} />
     );
     const keyExtractor = ({ id } = {}) => `ideaItem-${id}`;
-    const leaderboardItems = useSelector(selectLeaderboardItems);
+    let num = 0;
+    const leaderboardItems = useSelector(selectLeaderboardItems).sort((a, b) => - a.rating + b.rating).map((item, num) => ({...item, num: num + 1}));
+    
     console.log('list leaderboardItems: ', leaderboardItems)
     return (
         <FlatList

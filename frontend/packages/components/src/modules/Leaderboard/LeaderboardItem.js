@@ -5,7 +5,7 @@ import { TitleCard } from "../../components/Title/Title";
 import { Tag } from "../../components/Rating/Rating";
 
 
-export const LeaderboardItem = ({ id, name, rating, ...other }) => {
+export const LeaderboardItem = ({ id, name, rating, num, ...other }) => {
   // const navigation = useNavigation();
 
   // const handleLinkPress = useCallback(() => {
@@ -25,6 +25,7 @@ export const LeaderboardItem = ({ id, name, rating, ...other }) => {
 
   return (
     <IdeaCard>
+        <Tag>{num}</Tag>
         <TitleCard>{name}</TitleCard>
         <Tag>+{rating}</Tag>
     </IdeaCard>
