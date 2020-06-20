@@ -1,23 +1,19 @@
 import React from "react";
 import { TouchableOpacity, Text } from "react-native";
 import styled from "styled-components/native";
-import { useNavigation, Link } from "@react-navigation/native";
+import { useNavigation, Link, useLinkProps, StackActions } from "@react-navigation/native";
 
-const Button = styled(Link)`
-  padding: ${({ theme }) => theme.paddingMedium}px
-    ${({ theme }) => theme.paddingSmall}px;
-  width: auto;
-`;
-const Title = styled(Text)`
-  color: ${({ theme }) => theme.colors.textGrey};
-  font-size: ${({ theme }) => theme.fontSize.button};
-`;
+const Button = styled(TouchableOpacity)``;
 
-export const ButtonLink = ({ title, onPress, href, ...props }) => {
-  // const navigation = useNavigation()
+export const ButtonLink = ({ href, children, ...componentProps }) => {
+  const { onPress, ...props } = useLinkProps({
+    // to: href,
+    action: StackActions.push("idea", { id: 2 }),
+  });
+  console.log("href", href);
   return (
-    <Button {...props}>
-      <Title>{title}</Title>
+    <Button {...props} {...componentProps} onPress={onPress}>
+      {children}
     </Button>
   );
 };

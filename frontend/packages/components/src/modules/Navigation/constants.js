@@ -19,7 +19,7 @@ const getLinkingConfig = (screens, refs) => {
 };
 
 export const linking = {
-  prefixes: ["https://untitled.com", "untitled://"],
+  prefixes: ["http://untitled.com", "untitled://"],
   config: getLinkingConfig(Screens, Refs),
 };
 
@@ -29,5 +29,5 @@ export const getLink = (route, params) => {
     ""
   );
 
-  return `${route}/${paramsList}`;
+  return `${route}${paramsList}`;
 };
