@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components/native";
 import { View, Text } from "react-native";
-import { IdeasList } from "../IdeasList";
+import { IdeasList } from "../IdeasList/IdeasList";
 import { Block } from "../../components/Block/Block";
 import { Title } from "../../components/Title/Title";
 
