@@ -2,7 +2,7 @@ import React from "react";
 import { Card } from "../../components/Card/Card";
 import { Separator } from "../../components/Separator/Separator";
 import { Title } from "../../components/Title/Title";
-import ach from "../../assets/achivments.PNG"
+import ach from "../../assets/achivments.png";
 import { Image } from "react-native";
 import styled from "styled-components/native";
 import { View } from "react-native";
@@ -19,7 +19,7 @@ const UserContainer = styled(View)`
 
 const UserCard = styled(Card)`
   flex: 1;
-  heigth: 700px;
+  height: 700px;
   background-color: #ff00ff;
 `;
 

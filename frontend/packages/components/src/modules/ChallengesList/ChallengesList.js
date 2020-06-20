@@ -1,5 +1,5 @@
 import React from "react";
-import styled from 'styled-components/native'
+import styled from "styled-components/native";
 import { View, Text, FlatList } from "react-native";
 import { IdeaItem } from "../Idea/IdeaItem";
 import { selectIdeas } from "../../redux/selectors/ideas";
@@ -9,24 +9,22 @@ import { Title } from "../../components/Title/Title";
 import { Card } from "../../components/Card/Card";
 
 const ChallengesCard = styled(Card)`
-  flex:1;
-`
+  flex: 1;
+`;
 const ChallengesListComponent = styled(FlatList)`
   width: 100%;
 `;
 
 const ChallengesTitle = styled(Title)`
-  margin-left: ${({theme}) => theme.marginCard}px;
-  margin-bottom: ${({theme}) => theme.marginCard * 1.5}px;
-`
+  margin-left: ${({ theme }) => theme.marginCard}px;
+  margin-bottom: ${({ theme }) => theme.marginCard * 1.5}px;
+`;
 
 export const ChallengesList = () => {
-  const renderItem = ({ item = {} }) => (
-    <IdeaItem idea={item} />
-  );
+  const renderItem = ({ item = {} }) => <IdeaItem idea={item} />;
   const keyExtractor = ({ id } = {}) => `ideaItem-${id}`;
   const ideas = useSelector(selectIdeas);
-  console.log('list', ideas)
+  console.log("list", ideas);
   return (
     <ChallengesCard>
       <ChallengesTitle>Челленджы</ChallengesTitle>
@@ -36,7 +34,7 @@ export const ChallengesList = () => {
         renderItem={renderItem}
         keyExtractor={keyExtractor}
         ItemSeparatorComponent={Separator}
-      // conta
+        showsVerticalScrollIndicator={false}
       />
     </ChallengesCard>
   );

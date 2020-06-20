@@ -12,7 +12,6 @@ const IdeaCard = styled(Card)`
   margin-right: 16px;
   flex: 1;
   /* background-color: #00ff00; */
-
 `;
 
 const IdeasListView = styled(FlatList)`
@@ -37,7 +36,7 @@ export const IdeasList = () => {
         renderItem={renderItem}
         keyExtractor={keyExtractor}
         ItemSeparatorComponent={Separator}
-        // conta
+        showsVerticalScrollIndicator={false}
       />
     </IdeaCard>
   );

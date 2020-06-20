@@ -7,12 +7,10 @@ export const TagWrapper = styled(View)`
     ${({ theme }) => theme.paddingTiny2}px;
 
   background-color: ${({ theme }) => theme.colors.white};
-  
-  /* border: solid; */
   border-width: 1;
   border-color: ${({ theme }) => theme.colors.blue};
 
-  margin-right: ${({ theme }) => theme.paddingTiny};
+  margin-right: ${({ theme }) => theme.paddingTiny1};
 
   border-radius: ${({ theme }) => theme.borderRadius};
 `;
@@ -25,7 +23,7 @@ export const Label = styled(Text)`
 export const Tag = ({ tag, key }) => {
   const { title } = tag;
   return (
-    <TagWrapper key={key} tag={tag}>
+    <TagWrapper key={key}>
       <Label>{title}</Label>
     </TagWrapper>
   );

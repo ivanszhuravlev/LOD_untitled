@@ -45,7 +45,7 @@ export const CommentsList = () => {
       data={comments}
       renderItem={renderItem}
       keyExtractor={keyExtractor}
-      // conta
+      showsVerticalScrollIndicator={false}
     />
   );
 };

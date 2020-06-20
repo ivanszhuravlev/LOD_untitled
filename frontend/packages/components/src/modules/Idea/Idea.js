@@ -20,7 +20,7 @@ const Tags = styled(TagsList)`
 
 const Title = styled(TitleBlue)`
   margin-top: 8px;
-  margin-right: ${({theme}) => theme.paddingTiny1}px;
+  margin-right: ${({ theme }) => theme.paddingTiny1}px;
 `;
 
 const Description = styled(Text)`
@@ -32,14 +32,14 @@ const Description = styled(Text)`
 const DateBlock = styled(Text)`
   font-size: ${({ theme }) => theme.fontSize.textSmall};
   color: ${({ theme }) => theme.colors.textGrey};
-  margin-top: ${({theme}) => theme.paddingMedium}px;
+  margin-top: ${({ theme }) => theme.paddingMedium}px;
 `;
 
 export const Idea = ({ idea }) => {
   const { title, tags, description, created_at } = idea;
 
   return (
-    <div>
+    <>
       <Card>
         <Top>
           <Title>{title}</Title>
@@ -49,8 +49,8 @@ export const Idea = ({ idea }) => {
         <DateBlock>{getReadableTime(created_at)}</DateBlock>
       </Card>
       <Block>
-        <CommentsList></CommentsList>
+        <CommentsList />
       </Block>
-    </div>
+    </>
   );
 };

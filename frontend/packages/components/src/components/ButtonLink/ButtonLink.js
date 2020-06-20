@@ -1,18 +1,14 @@
 import React from "react";
+import { View } from "react-native";
 import styled from "styled-components/native";
-import {
-  useNavigation,
-  Link,
-  useLinkProps,
-  StackActions,
-} from "@react-navigation/native";
+import { Link } from "@react-navigation/native";
 
-const Button = styled(Link)``;
+const Button = styled(View)``;
 
 export const ButtonLink = ({ href, children, ...props }) => {
   return (
-    <Button to={href} {...props}>
-      {children}
+    <Button {...props}>
+      <Link to={href}>{children}</Link>
     </Button>
   );
 };
