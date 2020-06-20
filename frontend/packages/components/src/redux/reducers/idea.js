@@ -7,8 +7,9 @@ const initialState = {
 export const ideaReducer = (state = initialState, action) => {
   switch (action.type) {
     case UPDATE_IDEAS_LIST:
-      const ideas = Array.isArray(action.payload)
-        ? action.payload
+      console.log("payload", action.payload);
+      const ideas = action.payload.results
+        ? action.payload.results
         : [action.payload];
       return { ...state, ideas };
     default:
