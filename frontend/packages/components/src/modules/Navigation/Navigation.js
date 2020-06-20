@@ -14,7 +14,7 @@ export const Navigation = () => {
         <Root.Screen name={Screens.Home} component={HomeStack} />
         <Root.Screen name={Screens.Dashboard} component={DashboardStack} />
         <Root.Screen name={Screens.Leaderboard} component={LeaderboardStack} />
-        <Root.Screen name={Screens.IdeaCreate} component={LeaderboardStack} />
+        {/* <Root.Screen name={Screens.IdeaCreate} component={LeaderboardStack} /> */}
       </RootNavigator>
     </NavigationContainer>
   );
