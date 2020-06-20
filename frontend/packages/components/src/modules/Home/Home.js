@@ -1,12 +1,14 @@
 import React from "react";
 import styled from "styled-components/native";
-import { View, Text, Button } from "react-native";
+import { View, Text, Button, TextInput } from "react-native";
+import { Search } from '../../components/Search/Search';
 import { IdeasList } from "../IdeasList/IdeasList";
 import { ChallengesList } from "../ChallengesList/ChallengesList";
 import { Block } from "../../components/Block/Block";
 import { ButtonLink } from "../../components/ButtonLink/ButtonLink";
 import { Title } from "../../components/Title/Title";
 import { Screens, getLink } from "../Navigation/constants";
+import { Card } from "../../components/Card/Card";
 
 const Link = styled(ButtonLink)``;
 const Container = styled(View)`
@@ -26,6 +28,9 @@ export const Home = () => {
       <Link to={href}>
         <Text>Add link</Text>
       </Link>
+      <Card>
+        <Search/>
+      </Card>
       <Container>
         <IdeasList />
         <ChallengesList />

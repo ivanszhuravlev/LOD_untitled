@@ -8,6 +8,7 @@
     "nohoist": []
   },
   "dependencies": {
+    "native-base": "^2.13.12",
     "react-native": "0.62.2",
     "yarn": "^1.22.4"
   },
