@@ -19,21 +19,25 @@ const Link = styled(ButtonLink)``;
 
 const InfoContainer = styled(View)`
   flex-direction: row;
+  width: 100%;
+  margin-top: ${({theme}) => theme.marginCard}
 `;
 
 const TagsBlock = styled(View)``;
 
-export const IdeaItem = ({ title, id, ...props }) => {
+export const IdeaItem = ({ idea, ...props }) => {
+  const { tags, title, id } = idea;
   const href = getLink(Screens.Idea, { id });
-
+  
   return (
     <IdeaCard {...props}>
       <Link href={href}>
         <TitleBlue>{`> ${title}`}</TitleBlue>
         <InfoContainer>
           <TagsBlock>
-            <TagsList />
+            <TagsList tags={tags} />
           </TagsBlock>
+          {/* <Date>{</Date> */}
         </InfoContainer>
       </Link>
     </IdeaCard>

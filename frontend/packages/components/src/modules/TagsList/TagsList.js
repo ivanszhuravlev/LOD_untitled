@@ -7,7 +7,7 @@ const Wrapper = styled(View)`
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
-  margin: ${({theme}) => theme.paddingSmall}px 0;
+  margin-right: ${({theme}) => theme.paddingSmall}px;
 `;
 
 export const TagsList = ({ tags = [] }) => {
