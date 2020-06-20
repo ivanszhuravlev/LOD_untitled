@@ -11,9 +11,14 @@ import { Card } from "../../components/Card/Card";
 const ChallengesCard = styled(Card)`
   flex:1;
 `
-const ChallegesList = styled(FlatList)`
+const ChallengesListComponent = styled(FlatList)`
   width: 100%;
 `;
+
+const ChallengesTitle = styled(Title)`
+  margin-left: ${({theme}) => theme.marginCard}px;
+  margin-bottom: ${({theme}) => theme.marginCard * 1.5}px;
+`
 
 export const ChallengesList = () => {
   const renderItem = ({ item = {} }) => (
@@ -24,9 +29,9 @@ export const ChallengesList = () => {
   console.log('list', ideas)
   return (
     <ChallengesCard>
-      <Title>Challenges</Title>
+      <ChallengesTitle>Челленджы</ChallengesTitle>
       <Separator />
-      <ChallegesList
+      <ChallengesListComponent
         data={ideas}
         renderItem={renderItem}
         keyExtractor={keyExtractor}

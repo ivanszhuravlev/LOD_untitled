@@ -2,21 +2,25 @@ import React, { useCallback } from "react";
 import styled from "styled-components/native";
 import { View, Text, TouchableOpacity } from "react-native";
 import { Card } from "../../components/Card/Card";
-import { TitleCard, Title, TitleBlue } from "../../components/Title/Title";
+import { TitleCard, TitleBlue } from "../../components/Title/Title";
 import { Screens, getLink } from "../Navigation/constants";
 import { ButtonLink } from "../../components/ButtonLink/ButtonLink";
 import { TagsList } from "../TagsList/TagsList";
-import { RoundIconGo } from "../../components/Icon/RoundIcon";
 import { getReadableTime } from "../../utils/getReadableTime";
 
 const IdeaCard = styled(Card)`
   flex-direction: column;
   align-items: flex-start;
   padding: ${({ theme }) => theme.paddingMedium}px;
+  margin: 0;
 `;
 
-const Link = styled(ButtonLink)`
-  padding-left: ${({ theme }) => theme.paddingTiny2 + 21}px;
+const Link = styled(ButtonLink)``;
+
+const IdeaTitle = styled(TitleBlue)`
+  border-bottom-width: 1px;
+  border-bottom-color: ${({ theme }) => theme.colors.blue};
+  padding-bottom: 2px;
 `;
 
 const InfoContainer = styled(View)`
@@ -29,35 +33,34 @@ const InfoContainer = styled(View)`
 
 const TagsBlock = styled(View)``;
 
-const GoIcon = styled(RoundIconGo)`
-  margin-right: ${({ theme }) => theme.paddingTiny2}px;
-  position: absolute;
-  left: ${({ theme }) => theme.paddingMedium};
-  margin-top: 1px;
-`;
-
-const DateBlock = styled(Title)`
+const DateBlock = styled(Text)`
   font-size: ${({ theme }) => theme.fontSize.textSmall};
   color: ${({ theme }) => theme.colors.textGrey};
 `;
 
+const Description = styled(Text)`
+  font-size: ${({ theme }) => theme.fontSize.text};
+  color: ${({ theme }) => theme.colors.textGrey};
+  margin: ${({ theme }) => theme.paddingTiny2}px 0px;
+`;
+
 export const IdeaItem = ({ idea, ...props }) => {
-  const { tags, title, id, created_at } = idea;
+  const { tags, title, id, created_at, description } = idea;
   const href = getLink(Screens.Idea, { id });
 
   return (
     <IdeaCard {...props}>
       <Link href={href}>
-        <GoIcon />
         <View>
-          <TitleBlue>{title}</TitleBlue>
+          <IdeaTitle>{title}</IdeaTitle>
         </View>
       </Link>
+      <Description>{description}</Description>
       <InfoContainer>
+        <DateBlock>{getReadableTime(created_at)}</DateBlock>
         <TagsBlock>
           <TagsList tags={tags} />
         </TagsBlock>
-        <DateBlock>{getReadableTime(created_at)}</DateBlock>
       </InfoContainer>
     </IdeaCard>
   );

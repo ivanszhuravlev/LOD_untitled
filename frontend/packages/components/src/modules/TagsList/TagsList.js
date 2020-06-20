@@ -7,12 +7,12 @@ const Wrapper = styled(View)`
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
-  margin-right: ${({theme}) => theme.paddingSmall}px;
+  margin-left: ${({ theme }) => theme.paddingSmall}px;
 `;
 
-export const TagsList = ({ tags = [] }) => {
+export const TagsList = ({ tags = [], ...props }) => {
   return (
-    <Wrapper>
+    <Wrapper {...props}>
       {tags.map((tag) => (
         <Tag tag={tag} key={tag.id} />
       ))}

@@ -10,30 +10,34 @@ import styled from "styled-components/native";
 
 const IdeaCard = styled(Card)`
   margin-right: 16px;
-  flex:1;
+  flex: 1;
+  /* background-color: #00ff00; */
+
 `;
 
 const IdeasListView = styled(FlatList)`
   width: 100%;
 `;
 
+const IdeasTitle = styled(Title)`
+  margin-left: ${({ theme }) => theme.marginCard}px;
+  margin-bottom: ${({ theme }) => theme.marginCard * 1.5}px;
+`;
 
 export const IdeasList = () => {
-  const renderItem = ({ item = {} }) => (
-    <IdeaItem idea={item} />
-  );
+  const renderItem = ({ item = {} }) => <IdeaItem idea={item} />;
   const keyExtractor = ({ id } = {}) => `ideaItem-${id}`;
   const ideas = useSelector(selectIdeas);
   return (
     <IdeaCard>
-      <Title>Ideas</Title>
-      <Separator/>
+      <IdeasTitle>Идеи</IdeasTitle>
+      <Separator />
       <IdeasListView
         data={ideas}
         renderItem={renderItem}
         keyExtractor={keyExtractor}
         ItemSeparatorComponent={Separator}
-      // conta
+        // conta
       />
     </IdeaCard>
   );
