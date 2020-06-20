@@ -3,8 +3,8 @@ import { View } from "react-native";
 import styled from "styled-components/native";
 
 export const Card = styled(View)`
-  padding: ${({ theme }) => theme.paddingVertical}px
-    ${({ theme }) => theme.paddingHorizontal}px;
+  padding: ${({ theme }) => theme.paddingMedium}px
+    ${({ theme }) => theme.paddingSmall}px;
   border-radius: ${({ theme }) => theme.borderRadius}px;
   background-color: ${({ theme }) => theme.colors.white};
   margin-bottom: ${({ theme }) => theme.marginCard}px;

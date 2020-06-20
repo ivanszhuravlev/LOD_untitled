@@ -15,7 +15,8 @@ const dumpList = [
 ];
 
 export const IdeasList = () => {
-  const renderItem = ({ title, id }) => <IdeaItem title={title} id={id} />;
+  const renderItem = ({ item: { title, id } }) =>
+    console.log("title", title) || <IdeaItem title={title} id={id} />;
   const keyExtractor = ({ id }) => `ideaItem-${id}`;
 
   return (
@@ -23,7 +24,7 @@ export const IdeasList = () => {
       data={dumpList}
       renderItem={renderItem}
       keyExtractor={keyExtractor}
-      conta
+      // conta
     />
   );
 };

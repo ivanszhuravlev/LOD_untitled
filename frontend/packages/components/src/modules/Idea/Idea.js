@@ -1,12 +1,12 @@
 import React from "react";
 import { View, Text } from "react-native";
 import { Card } from "../../components/Card/Card";
-import { H1 } from "../../components/Title/Title";
+import { TitleCard } from "../../components/Title/Title";
 
 export const Idea = () => {
   return (
     <Card>
-      <H1>Заголовок идеи</H1>
+      <TitleCard>Заголовок идеи</TitleCard>
       <Text>dfgh</Text>
     </Card>
   );

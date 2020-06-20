@@ -1,9 +1,9 @@
 import React, { useCallback } from "react";
-import { View, Text } from "react-native";
+import styled from "styled-components/native";
+import { View, Text, TouchableOpacity } from "react-native";
 import { Card } from "../../components/Card/Card";
-import { H1 } from "../../components/Title/Title";
-import { ButtonLink } from "../../components/ButtonLink/ButtonLink";
-import { useNavigation } from "@react-navigation/native";
+import { TitleCard } from "../../components/Title/Title";
+import { useNavigation } from "../../hooks/use-navigation";
 import { Screens } from "../Navigation/constants";
 
 export const IdeaItem = ({ title, id }) => {
@@ -13,14 +13,17 @@ export const IdeaItem = ({ title, id }) => {
     navigation.navigate(Screens.Idea, { id });
   }, []);
 
+  const IdeaCard = styled(Card)`
+    flex-direction: row;
+    align-items: center;
+    padding: ${({ theme }) => theme.paddingMedium}px;
+  `;
+
   return (
-    <Card>
-      <H1>{title}</H1>
-      <ButtonLink
-        type={"outline"}
-        title={"GO to idea"}
-        onPress={handleLinkPress}
-      />
-    </Card>
+    <TouchableOpacity onPress={handleLinkPress}>
+      <IdeaCard>
+        <TitleCard>{title}</TitleCard>
+      </IdeaCard>
+    </TouchableOpacity>
   );
 };

@@ -7,6 +7,6 @@ export const Block = styled(View)`
   /* border-radius: 6px; */
   /* margin: 8px; */
   background-color: ${({ theme }) => theme.colors.grey};
-  padding: ${({ theme }) => theme.paddingVertical}px
-    ${({ theme }) => theme.paddingHorizontal}px;
+  padding: ${({ theme }) => theme.paddingMedium}px
+    ${({ theme }) => theme.paddingSmall}px;
 `;
