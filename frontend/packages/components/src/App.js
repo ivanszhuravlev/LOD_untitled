@@ -15,13 +15,11 @@ import { theme } from "./theme/theme";
 
 const App: () => React$Node = () => {
   return (
-    <>
-      <ThemeProvider theme={theme}>
-        <Provider store={store}>
-          <Navigation />
-        </Provider>
-      </ThemeProvider>
-    </>
+    <ThemeProvider theme={theme}>
+      <Provider store={store}>
+        <Navigation />
+      </Provider>
+    </ThemeProvider>
   );
 };
 

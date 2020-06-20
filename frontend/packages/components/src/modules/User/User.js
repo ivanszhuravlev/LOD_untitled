@@ -2,7 +2,7 @@ import React from "react";
 import { Card } from "../../components/Card/Card";
 import { Separator } from "../../components/Separator/Separator";
 import { Title } from "../../components/Title/Title";
-import ach from "../../assets/achivments.PNG"
+import ach from "../../assets/achivments.png";
 import { Image } from "react-native";
 import styled from "styled-components/native";
 import { View } from "react-native";
@@ -37,7 +37,7 @@ export const User = () => {
       <UserContainer>
         <UserCard />
         <AchivmentCard>
-          <AchImage source={ach} />
+          <AchImage source={{ uri: ach }} />
         </AchivmentCard>
       </UserContainer>
     </View>

@@ -37,7 +37,6 @@ export const IdeasList = () => {
         renderItem={renderItem}
         keyExtractor={keyExtractor}
         ItemSeparatorComponent={Separator}
-        // conta
       />
     </IdeaCard>
   );

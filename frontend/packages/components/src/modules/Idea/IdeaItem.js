@@ -15,7 +15,9 @@ const IdeaCard = styled(Card)`
   margin: 0;
 `;
 
-const Link = styled(ButtonLink)``;
+const Link = styled(ButtonLink)`
+  margin-bottom: ${({ theme }) => theme.paddingTiny2 * 2}px;
+`;
 
 const IdeaTitle = styled(TitleBlue)`
   border-bottom-width: 1px;
@@ -51,9 +53,7 @@ export const IdeaItem = ({ idea, ...props }) => {
   return (
     <IdeaCard {...props}>
       <Link href={href}>
-        <View>
-          <IdeaTitle>{title}</IdeaTitle>
-        </View>
+        <IdeaTitle>{title}</IdeaTitle>
       </Link>
       <Description>{description}</Description>
       <InfoContainer>
