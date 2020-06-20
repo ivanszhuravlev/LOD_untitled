@@ -2,6 +2,7 @@ export const Screens = {
   Home: "home",
   Dashboard: "dashboard",
   Idea: "idea",
+  Leaderboard: "leaderboard",
 };
 
 export const Refs = {
