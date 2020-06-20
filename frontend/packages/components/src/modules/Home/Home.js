@@ -27,7 +27,6 @@ export const Home = () => {
   return (
     <Container>
       <Link to={href}><Text>Add link</Text></Link>
-      <HomeTitle>Home component</HomeTitle>
       <IdeasList />
       <ChallengesList />
     </Container>

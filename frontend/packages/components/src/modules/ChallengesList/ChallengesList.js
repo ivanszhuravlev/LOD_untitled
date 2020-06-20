@@ -16,8 +16,8 @@ const ChallegesList = styled(FlatList)`
 `;
 
 export const ChallengesList = () => {
-  const renderItem = ({ item: { title, id } = {} }) => (
-    <IdeaItem title={title} id={id} />
+  const renderItem = ({ item = {} }) => (
+    <IdeaItem idea={item} />
   );
   const keyExtractor = ({ id } = {}) => `ideaItem-${id}`;
   const ideas = useSelector(selectIdeas);
