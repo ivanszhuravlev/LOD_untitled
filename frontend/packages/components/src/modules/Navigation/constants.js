@@ -12,7 +12,12 @@ const getLinkingConfig = (screens, refs) => {
   return Object.keys(screens).reduce(
     (config, screen) => ({
       ...config,
-      [screen]: refs[screen] || screens[screen],
+      [screens[screen]]: {
+        path: refs[screens[screen]] || screens[screen],
+        parse: {
+          id: (id) => `${id}`,
+        },
+      },
     }),
     {}
   );
@@ -29,5 +34,5 @@ export const getLink = (route, params) => {
     ""
   );
 
-  return `${route}${paramsList}`;
+  return `/${route}${paramsList}`;
 };

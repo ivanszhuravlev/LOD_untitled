@@ -7,7 +7,7 @@ import { useNavigation } from "../../hooks/use-navigation";
 import { Screens, getLink } from "../Navigation/constants";
 import { ButtonLink } from "../../components/ButtonLink/ButtonLink";
 
-export const IdeaItem = ({ title, id }) => {
+export const IdeaItem = ({ title, id, ...other }) => {
   const navigation = useNavigation();
 
   // const handleLinkPress = useCallback(() => {
@@ -26,11 +26,12 @@ export const IdeaItem = ({ title, id }) => {
     height: 100%;
     flex:1;
   `
-
+  const href = getLink(Screens.Idea, { id })
+  console.log(other)
   return (
     <IdeaCard>
       <Link
-        href={getLink(Screens.Idea, { id })}
+        href={href}
         // onPress={handleLinkPress}
       >
         <TitleCard>{title}</TitleCard>

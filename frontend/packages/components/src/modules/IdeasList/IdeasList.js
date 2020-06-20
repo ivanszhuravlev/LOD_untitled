@@ -1,6 +1,8 @@
 import React from "react";
 import { View, Text, FlatList } from "react-native";
 import { IdeaItem } from "../Idea/IdeaItem";
+import { selectIdeas } from "../../redux/selectors/ideas";
+import { useSelector } from "../../hooks/use-selector";
 
 const dumpList = [
   { title: "Idea 1", id: 1 },
@@ -15,13 +17,13 @@ const dumpList = [
 ];
 
 export const IdeasList = () => {
-  const renderItem = ({ item: { title, id } }) =>
-    console.log("title", title) || <IdeaItem title={title} id={id} />;
-  const keyExtractor = ({ id }) => `ideaItem-${id}`;
+  const renderItem = ({ item: { title, id } = {} }) => <IdeaItem title={title} id={id} />;
+  const keyExtractor = ({ id } = {}) => `ideaItem-${id}`;
+  const ideas = useSelector(selectIdeas);
 
   return (
     <FlatList
-      data={dumpList}
+      data={ideas}
       renderItem={renderItem}
       keyExtractor={keyExtractor}
       // conta
