@@ -19,7 +19,7 @@ const UserContainer = styled(View)`
 
 const UserCard = styled(Card)`
   flex: 1;
-  heigth: 700px;
+  height: 700px;
   background-color: #ff00ff;
 `;
 
@@ -37,7 +37,7 @@ export const User = () => {
       <UserContainer>
         <UserCard />
         <AchivmentCard>
-          <AchImage source={{ uri: ach }} />
+          <AchImage source={ach} />
         </AchivmentCard>
       </UserContainer>
     </View>
