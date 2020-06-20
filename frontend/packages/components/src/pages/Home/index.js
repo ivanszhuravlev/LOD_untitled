@@ -8,12 +8,8 @@ export const HomeScreen = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchIdeasListAction())
+    dispatch(fetchIdeasListAction());
   }, []);
 
-  return (
-    <View>
-      <Home />
-    </View>
-  );
+  return <Home />;
 };
