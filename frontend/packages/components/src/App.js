@@ -8,11 +8,19 @@ import {
   StatusBar,
 } from "react-native";
 import { Navigation } from "./modules/Navigation/Navigation";
+import { Provider } from "react-redux";
+import { store } from "./redux/store";
+import { ThemeProvider } from "styled-components/native";
+import { theme } from "./theme/theme";
 
 const App: () => React$Node = () => {
   return (
     <>
-      <Navigation />
+      <ThemeProvider theme={theme}>
+        <Provider store={store}>
+          <Navigation />
+        </Provider>
+      </ThemeProvider>
     </>
   );
 };

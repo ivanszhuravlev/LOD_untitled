@@ -1,4 +1,5 @@
 export const Screens = {
   Home: "Home",
-  Dashboard: "Dashboard"
+  Dashboard: "Dashboard",
+  Idea: "Idea"
 };
