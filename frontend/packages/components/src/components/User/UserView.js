@@ -1,47 +1,45 @@
-// import React, { useCallback } from "react";
-// import styled from "styled-components/native";
-// import { Text, Button, View } from "react-native";
-// import { Card } from "../../components/Card/Card";
-// import { TitleCard } from "../../components/Title/Title";
+import React, { useCallback } from "react";
+import styled from "styled-components/native";
+import { Text, Button, View } from "react-native";
+import { Card } from "../../components/Card/Card";
+import { TitleCard } from "../../components/Title/Title";
+import { Image } from "react-native";
+import { Statistic } from "./Statistic";
+import { UserTabs } from "./UserTabs";
+import avatar from "../../assets/avatar.png";
 
-// export const Comment = ({ title, id, text, user }) => {
+const AvatarImage = styled(Image)`
+  width: 200px;
+  height: 200px;
+  resize-mode: contain;
+  border-radius: 100%;
+`;
 
-//     const Comment = styled(Card)`
-//     flex-direction: column;
-//     place-items: flex-start;
-//     align-items: center;
-//     padding: ${({ theme }) => theme.paddingMedium}px;
-//   `;
+const StatisticContainer = styled(View)`
+  flex-direction: row;
+`;
 
-//     const UserName = styled(Text)`
-//     padding-bottom: 10px;
-//   `
+const Separator = styled(View)`
+  width: 1px;
+  background-color: #ff00ff;
+  height: 100%;
+`;
 
-//     const Rating = styled(View)`
-//     flex-direction: row;
-//     align-items: center;
-//     justify-content: space-between;
-//     width: 150px;
-//     padding: ${({ theme }) => theme.paddingMedium}px;
-//   `
-
-//     const CommentText = styled(Text)`
-//     font-size: 16px;
-//     padding-left: 20px;
-//     color: ${({ theme }) => theme.colors.textGrey};
-//   `
-
-
-//     // console.log(other)
-//     return (
-//         <Comment>
-//             <UserName>{user.name}</UserName>
-//             <CommentText>{text}</CommentText>
-//             <Rating>
-//                 <Button>up</Button>
-//           10
-//           <Button>down</Button>
-//             </Rating>
-//         </Comment>
-//     );
-// };
+export const UserView = () => {
+    return (
+        <Card>
+            <AvatarImage source={avatar} />
+            <Text>Давид</Text>
+            <StatisticContainer>
+                <Statistic number={0} desc={'рейтинг'} />
+                <Separator />
+                <Statistic number={0} desc={'коментариев'} />
+                <Separator />
+                <Statistic number={0} desc={'идей предложено'} />
+                <Separator />
+                <Statistic number={0} desc={'идей реализовано'} />
+            </StatisticContainer>
+            <UserTabs/>
+        </Card>
+    );
+};
