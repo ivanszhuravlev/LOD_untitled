@@ -3,8 +3,8 @@ import styled from "styled-components/native";
 import { View, Text } from "react-native";
 
 const RoundIconContainer = styled(View)`
-  width: 19px;
-  height: 19px;
+  width: 23px;
+  height: 23px;
   justify-content: center;
   align-items: center;
   border-width: 1;
@@ -14,8 +14,8 @@ const RoundIconContainer = styled(View)`
 
 const Label = styled(Text)`
   color: ${({ theme }) => theme.colors.blue};
-  font-size: 11;
-  line-height: 11;
+  font-size: 13;
+  line-height: 13;
 `;
 
 export const RoundIcon = ({ content, ...props }) => {
