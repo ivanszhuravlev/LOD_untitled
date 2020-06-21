@@ -9,8 +9,8 @@ import styled from "styled-components/native";
 import { View } from "react-native";
 
 const AchImage = styled(Image)`
-  width: 500px;
-  height: 300px;
+  width: 700px;
+  height: 400px;
   resize-mode: contain;
 `;
 

@@ -20,10 +20,10 @@ export const Label = styled(Text)`
   font-size: ${({ theme }) => theme.fontSize.textSmall};
 `;
 
-export const Tag = ({ tag, key }) => {
+export const Tag = ({ tag, key, ...props }) => {
   const { title } = tag;
   return (
-    <TagWrapper key={key}>
+    <TagWrapper key={key} {...props}>
       <Label>{title}</Label>
     </TagWrapper>
   );

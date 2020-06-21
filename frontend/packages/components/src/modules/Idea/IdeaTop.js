@@ -6,10 +6,16 @@ import { TagsList } from "../TagsList/TagsList";
 import { getReadableTime } from "../../utils/getReadableTime";
 import { Vote } from '../../components/Vote/Vote';
 
-const Top = styled(View)`
-  flex-direction: column;
+const Row = styled(View)`
+  flex-direction: row;
   align-content: flex-end;
   /* background-color: #0000ff; */
+`;
+
+const Top = styled(View)`
+  flex-direction: column;
+  width: 80%;
+  align-content: flex-end;
 `;
 
 const TopTitle = styled(View)`
@@ -29,6 +35,9 @@ const Title = styled(TitleBlue)`
 
 const TopVote = styled(Vote)`
   flex-direction: column;
+  padding: 5px 20px;
+  width: 100px;
+  height: 120px;
 `
 
 const Description = styled(Text)`
@@ -48,15 +57,17 @@ export const IdeaTop = ({ idea }) => {
 
   return (
     <>
-      <Top>
+      <Row>
         <TopVote rating={150} />
-        <TopTitle>
-          <Title>{title}</Title>
-          <Tags tags={tags} />
-        </TopTitle>
-        <Description>{description}</Description>
-        <DateBlock>{getReadableTime(created_at)}</DateBlock>
-      </Top>
+        <Top>
+          <TopTitle>
+            <Title>{title}</Title>
+            <Tags tags={tags} />
+          </TopTitle>
+          <Description>{description}</Description>
+          <DateBlock>{getReadableTime(created_at)}</DateBlock>
+        </Top>
+      </Row>
     </>
   );
 };

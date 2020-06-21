@@ -14,9 +14,9 @@ export const Vote = ({ ...props }) => {
   `;
     return (
       <Vote {...props}>
-        <Button title={"up"} />
+        <Button title={"+"} />
         <Text>{ rating }</Text>
-        <Button title={"downn"} />
+        <Button title={"-"} />
       </Vote>
     );
 };

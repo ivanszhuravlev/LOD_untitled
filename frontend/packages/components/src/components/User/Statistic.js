@@ -7,18 +7,24 @@ import { Image } from "react-native";
 import avatar from "../../assets/avatar.png";
 
 const Number = styled(Text)`
-  font-size: 15;
+  font-size: ${({theme}) => theme.fontSize.title};
+  font-weight: 600;
+  margin-bottom: 4px;
 `;
 
 const Desc = styled(Text)`
-    font-size: 8;
+  font-size: ${({theme}) => theme.fontSize.textSmall};
+`;
+
+const Container = styled(View)`
+  align-items: center;
 `;
 
 export const Statistic = ({ number, desc }) => {
-    return (
-        <View>
-            <Number>{number}</Number>
-            <Desc>{desc}</Desc>
-        </View>
-    );
+  return (
+    <Container>
+      <Number>{number}</Number>
+      <Desc>{desc}</Desc>
+    </Container>
+  );
 };
