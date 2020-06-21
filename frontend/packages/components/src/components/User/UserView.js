@@ -18,6 +18,8 @@ const AvatarImage = styled(Image)`
 
 const StatisticContainer = styled(View)`
   flex-direction: row;
+  margin: auto;
+  margin-bottom: 10px;
 `;
 
 const Separator = styled(View)`
@@ -26,6 +28,8 @@ const Separator = styled(View)`
 `;
 
 const UserCard = styled(Card)`
+  width: 40%;
+  height: 600px;
   align-items: stretch;
 `
 
@@ -33,6 +37,10 @@ const Name = styled(TitleBlue)`
   margin-top: ${({theme}) => theme.marginCard}px;
   margin-bottom: ${({theme}) => theme.marginCard}px;
   align-self: center;
+`
+
+const UserTabsStyled = styled(UserTabs)`
+  margin-top: 10px;
 `
 
 export const UserView = () => {

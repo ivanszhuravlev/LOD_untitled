@@ -29,10 +29,17 @@ const TabButton = styled(TouchableOpacity)`
 `;
 
 const TabLabel = styled(Text)`
-  color: ${({ theme }) => theme.colors.textGrey};
+margin-top: 10px;
+/* height: 70px; */
+  font-size: 16;
   color: ${({ theme, isFocused }) =>
     isFocused ? theme.colors.blue : theme.colors.textGrey};
+  border-color: ${({ theme, isFocused }) =>
+    isFocused ? theme.colors.grey : theme.colors.white};
+    border-width:1px;
   text-align: center;
+  border-radius:${({ theme, isFocused }) => theme.borderRadius};
+  padding: 5px;
 `;
 
 const TabBar = ({ state, descriptors, navigation }) => {
@@ -44,8 +51,8 @@ const TabBar = ({ state, descriptors, navigation }) => {
           options.tabBarLabel !== undefined
             ? options.tabBarLabel
             : options.title !== undefined
-            ? options.title
-            : route.name;
+              ? options.title
+              : route.name;
 
         const isFocused = state.index === index;
 

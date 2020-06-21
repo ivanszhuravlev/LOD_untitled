@@ -7,7 +7,8 @@ import { Image } from "react-native";
 import avatar from "../../assets/avatar.png";
 
 const Number = styled(Text)`
-  font-size: ${({theme}) => theme.fontSize.button};
+  font-size: ${({theme}) => theme.fontSize.title};
+  font-weight: 600;
   margin-bottom: 4px;
 `;
 
