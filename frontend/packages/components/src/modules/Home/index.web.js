@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components/native";
-import { View, Text, Button, TextInput } from "react-native";
+import { View, Text, Button } from "react-native";
 import { Search } from '../../components/Search/Search';
-import { IdeasList } from "../IdeasList/IdeasList";
+import { IdeasList } from "../IdeasList";
 import { ChallengesList } from "../ChallengesList/ChallengesList";
 import { Block } from "../../components/Block/Block";
 import { ButtonLink } from "../../components/ButtonLink/ButtonLink";

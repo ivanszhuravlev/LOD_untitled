@@ -5,6 +5,7 @@ import { Api } from "../../api/api";
 function* getIdeasSaga(action) {
   try {
     const payload = yield call(Api.get, action.payload.url);
+    console.log('pl', payload)
     yield put({ type: UPDATE_IDEAS_LIST, payload });
   } catch (error) {
     // yield put({ type: "FETCH_FAILED", error });

@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { View, Text } from "react-native";
-import { Idea } from "../../modules/Idea/Idea";
+import { Idea } from "../../modules/Idea/";
 import { selectIdea } from "../../redux/selectors/ideas";
 import { useParams } from "../../hooks/use-params/use-params";
 import { useSelector } from "../../hooks/use-selector/use-selector";

@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components/native";
 import { View, Text, FlatList } from "react-native";
-import { IdeaItem } from "../Idea/IdeaItem";
+import { IdeaItem } from "../IdeaItem/IdeaItem";
 import { selectIdeas } from "../../redux/selectors/ideas";
 import { useSelector } from "../../hooks/use-selector/use-selector";
 import { Separator } from "../../components/Separator/Separator";

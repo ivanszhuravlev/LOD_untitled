@@ -1,6 +1,6 @@
 import React from "react";
 import { View, Text, FlatList } from "react-native";
-import { IdeaItem } from "../Idea/IdeaItem";
+import { IdeaItem } from "../IdeaItem/IdeaItem";
 import { selectIdeas } from "../../redux/selectors/ideas";
 import { useSelector } from "../../hooks/use-selector/use-selector";
 import { Card } from "../../components/Card/Card";
