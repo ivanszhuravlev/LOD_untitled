@@ -15,7 +15,7 @@ function* getLeaderboardItemsSaga(action) {
     let payload = [
       {
         "id": 1,
-        "name": "Дима Демьянов",
+        "name": "Дмитрий Демьянов",
         "rating": 150,
         "avatarUri": avatar1
       },
