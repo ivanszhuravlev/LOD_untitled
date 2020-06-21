@@ -7,12 +7,12 @@ import { Card } from "../../components/Card/Card";
 
 export const Leaderboard = () => {
   return (
-    <Block>
+    <>
       <Card>
-      <Title>Лидеры</Title>
-      <Separator />
+        <Title>Лидеры</Title>
+        <Separator />
       </Card>
       <LeaderboardList />
-    </Block>
+    </>
   );
 };
