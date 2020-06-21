@@ -12,7 +12,7 @@ const AvatarImage = styled(Image)`
   width: 200px;
   height: 200px;
   resize-mode: contain;
-  border-radius: 100%;
+  border-radius: 200px;
   align-self: center;
 `;
 

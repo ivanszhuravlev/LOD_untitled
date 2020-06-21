@@ -32,6 +32,7 @@ const TabLabel = styled(Text)`
   color: ${({ theme }) => theme.colors.textGrey};
   color: ${({ theme, isFocused }) =>
     isFocused ? theme.colors.blue : theme.colors.textGrey};
+  text-align: center;
 `;
 
 const TabBar = ({ state, descriptors, navigation }) => {

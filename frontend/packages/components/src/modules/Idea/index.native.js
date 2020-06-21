@@ -9,9 +9,8 @@ import { TagsList } from "../TagsList/TagsList";
 import { getReadableTime } from "../../utils/getReadableTime";
 
 const Top = styled(View)`
-  flex-direction: row;
-  align-content: flex-end;
-  /* background-color: #0000ff; */
+  flex-direction: column;
+  align-content: flex-start;
 `;
 
 const Tags = styled(TagsList)`
