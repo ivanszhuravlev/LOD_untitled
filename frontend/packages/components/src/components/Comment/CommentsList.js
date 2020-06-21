@@ -13,9 +13,9 @@ const commentsList = [
           "deleted_at": null,
           "is_archieved": false,
           "tags": [],
-          "name": 'David Indzhiev'
+          "name": 'Давид Инджиев'
       },
-      "text": "this is really stupid idea",
+      "text": "Поддерживаю эту идею. Мне кажется во многих банках-конкурентах такие системы сейчас вводятся. Чем мы хуже?",
       "idea": 2
   },
   {
@@ -26,9 +26,9 @@ const commentsList = [
         "deleted_at": null,
         "is_archieved": false,
         "tags": [],
-        "name": 'David Indzhiev'
+        "name": 'Иван Журавлев'
     },
-    "text": "second comment",
+    "text": "Не согласен. Мне кажется система крайне не надежна и может повлечь за собой волну недовольства.",
     "idea": 2
 }
 ]
