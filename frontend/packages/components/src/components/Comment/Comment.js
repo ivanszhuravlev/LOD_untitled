@@ -7,7 +7,7 @@ import { Vote } from "../Vote/Vote";
 
 export const Comment = ({ title, id, text, user }) => {
   const Comment = styled(Card)`
-    flex-direction: column;
+    flex-direction: row;
     justify-content: flex-start;
     padding: ${({ theme }) => theme.paddingMedium}px;
   `;
@@ -16,19 +16,32 @@ export const Comment = ({ title, id, text, user }) => {
     padding-bottom: 10px;
   `;
 
-
   const CommentText = styled(Text)`
     font-size: 16px;
     padding-left: 20px;
     color: ${({ theme }) => theme.colors.textGrey};
   `;
 
+  const VoteComment = styled(Vote)`
+    flex-direction: column;
+    width: 40;
+    margin: 0;
+    padding: 0;
+    height: 100px;
+    margin-right: 12px;
+  `;
+
+  const RightSide = styled(View)`
+  `
+
   // console.log(other)
   return (
     <Comment>
-      <UserName>{user.name}</UserName>
-      <CommentText>{text}</CommentText>
-      <Vote rating={10}></Vote>
+      <VoteComment rating={10}></VoteComment>
+      <RightSide>
+        <UserName>{user.name}</UserName>
+        <CommentText>{text}</CommentText>
+      </RightSide>
     </Comment>
   );
 };
