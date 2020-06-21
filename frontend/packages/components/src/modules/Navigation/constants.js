@@ -1,9 +1,9 @@
 export const Screens = {
-  Home: "home",
+  Home: "Главная",
   Idea: "idea",
   IdeaCreate: "idea/create",
-  Leaderboard: "leaderboard",
-  User: "user",
+  Leaderboard: "Лидеры",
+  User: "Профиль",
 };
 
 export const Refs = {

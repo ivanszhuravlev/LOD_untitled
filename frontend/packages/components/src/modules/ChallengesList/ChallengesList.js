@@ -27,7 +27,7 @@ export const ChallengesList = () => {
   console.log("list", ideas);
   return (
     <ChallengesCard>
-      <ChallengesTitle>Челленджы</ChallengesTitle>
+      <ChallengesTitle>Задачи</ChallengesTitle>
       <Separator />
       <ChallengesListComponent
         data={ideas}

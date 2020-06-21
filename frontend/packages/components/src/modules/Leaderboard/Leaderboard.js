@@ -9,7 +9,7 @@ export const Leaderboard = () => {
   return (
     <Block>
       <Card>
-      <Title>Leaderboard</Title>
+      <Title>Лидеры</Title>
       <Separator />
       </Card>
       <LeaderboardList />

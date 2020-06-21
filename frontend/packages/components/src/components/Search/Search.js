@@ -18,7 +18,7 @@ export const Search = () => {
     return (
         <TextInput
         //   onChangeText={/* (search) => this.setState({search}) */}
-          placeholder="Search for ideas and challenges"
+          placeholder="Поиск идей и задач"
           style={styles.searchBar}
         />
     );
