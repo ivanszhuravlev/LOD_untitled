@@ -5,7 +5,7 @@ import styled from "styled-components/native";
 export const Title = styled(Text)`
   font-size: ${({ theme }) => theme.fontSize.title};
   color: ${({ theme }) => theme.colors.textBlack};
-  background-color: #ffffff;
+  /* background-color: #ffffff; */
   margin-bottom: ${({ theme }) => theme.marginCard};
 `;
 
@@ -15,5 +15,5 @@ export const TitleCard = styled(Title)`
 
 export const TitleBlue = styled(Title)`
   color: ${({ theme }) => theme.colors.blue};
-  line-height: 19;
+  line-height: 26;
 `;

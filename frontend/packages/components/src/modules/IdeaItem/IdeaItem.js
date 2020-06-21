@@ -7,6 +7,7 @@ import { Screens, getLink } from "../Navigation/constants";
 import { ButtonLink } from "../../components/ButtonLink/ButtonLink";
 import { TagsList } from "../TagsList/TagsList";
 import { getReadableTime } from "../../utils/getReadableTime";
+import { UserDateBlock } from "./UserDateBlock";
 
 const IdeaCard = styled(Card)`
   flex-direction: column;
@@ -25,19 +26,20 @@ const IdeaTitle = styled(TitleBlue)`
   padding-bottom: 2px;
 `;
 
+const TagsContainer = styled(View)`
+  flex-direction: row;
+  width: 100%;
+  margin-top: ${({ theme }) => theme.marginCard};
+  justify-content: flex-end;
+  align-items: center;
+`;
+
 const InfoContainer = styled(View)`
   flex-direction: row;
   width: 100%;
   margin-top: ${({ theme }) => theme.marginCard};
   justify-content: space-between;
   align-items: center;
-`;
-
-const TagsBlock = styled(View)``;
-
-const DateBlock = styled(Text)`
-  font-size: ${({ theme }) => theme.fontSize.textSmall};
-  color: ${({ theme }) => theme.colors.textGrey};
 `;
 
 const Description = styled(Text)`
@@ -49,18 +51,18 @@ const Description = styled(Text)`
 export const IdeaItem = ({ idea, ...props }) => {
   const { tags, title, id, created_at, description } = idea;
   const href = getLink(Screens.Idea, { id });
-
+  console.log("idea", idea.owner);
   return (
     <IdeaCard {...props}>
       <Link href={href}>
         <IdeaTitle>{title}</IdeaTitle>
       </Link>
       <Description>{description}</Description>
+      <TagsContainer>
+        <TagsList tags={tags} />
+      </TagsContainer>
       <InfoContainer>
-        <DateBlock>{getReadableTime(created_at)}</DateBlock>
-        <TagsBlock>
-          <TagsList tags={tags} />
-        </TagsBlock>
+        <UserDateBlock date={getReadableTime(created_at)} />
       </InfoContainer>
     </IdeaCard>
   );

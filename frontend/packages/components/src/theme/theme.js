@@ -6,8 +6,8 @@ export const theme = {
   fontSize,
   paddingTiny1: 4,
   paddingTiny2: 8,
-  paddingSmall: 16,
-  paddingMedium: 18,
+  paddingSmall: 18,
+  paddingMedium: 20,
   borderRadius: 4,
-  marginCard: 16,
+  marginCard: 18,
 };
