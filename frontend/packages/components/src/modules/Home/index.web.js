@@ -24,9 +24,6 @@ export const Home = () => {
 
   return (
     <>
-      <ButtonLink to={href}>
-        <Text>Add link</Text>
-      </ButtonLink>
       <Card>
         <Search />
       </Card>

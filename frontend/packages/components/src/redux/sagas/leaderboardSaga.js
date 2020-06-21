@@ -30,7 +30,7 @@ function* getLeaderboardItemsSaga(action) {
       },
       {
         "id": 4,
-        "name": "Михуил Круглов",
+        "name": "Михаил Круглов",
         "rating": 325,
         "avatarUri": avatar4
       }
