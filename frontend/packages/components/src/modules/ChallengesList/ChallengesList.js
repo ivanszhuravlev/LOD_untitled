@@ -7,6 +7,7 @@ import { useSelector } from "../../hooks/use-selector/use-selector";
 import { Separator } from "../../components/Separator/Separator";
 import { Title } from "../../components/Title/Title";
 import { Card } from "../../components/Card/Card";
+import { ChallengesItem } from "../IdeaItem/ChallengesItem";
 
 const ChallengesCard = styled(Card)`
   flex: 1;
@@ -21,7 +22,7 @@ const ChallengesTitle = styled(Title)`
 `;
 
 export const ChallengesList = () => {
-  const renderItem = ({ item = {} }) => <IdeaItem idea={item} />;
+  const renderItem = ({ item = {} }) => <ChallengesItem challenge={item} />;
   const keyExtractor = ({ id } = {}) => `ideaItem-${id}`;
   const ideas = useSelector(selectChallenges);
   console.log("list challenges", ideas);

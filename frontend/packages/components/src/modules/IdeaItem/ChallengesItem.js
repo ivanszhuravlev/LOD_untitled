@@ -9,12 +9,11 @@ import { TagsList } from "../TagsList/TagsList";
 import { getReadableTime } from "../../utils/getReadableTime";
 import { UserDateBlock } from "./UserDateBlock";
 import { IdeaStatus } from "./IdeaStatus";
-import { Vote } from "../../components/Vote/Vote";
 
 const IdeaCard = styled(Card)`
-  flex-direction: row;
-  justify-content: flex-start;
-  box-sizing: border-box;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: ${({ theme }) => theme.paddingMedium}px;
   margin: 0;
 `;
 
@@ -50,49 +49,33 @@ const Description = styled(Text)`
   margin: ${({ theme }) => theme.paddingTiny2}px 0px;
 `;
 
-const LeftSide = styled(View)`
-  align-items: flex-start;
-`;
-
-const RightSide = styled(View)`
-  flex-direction: column;
-  align-items: flex-start;
-  padding: ${({ theme }) => theme.paddingMedium}px;
-  box-sizing: border-box;
-  flex: 1;
-`;
-
-const VoteStyled = styled(Vote)`
-  flex-direction: column;
-  height: 160px;
-  width: 36px;
-  margin: 0;
-  /* padding: 0; */
-  box-sizing: border-box;
-`;
-
-export const IdeaItem = ({ idea, ...props }) => {
-  const { tags, title, id, created_at, description, status } = idea;
+export const ChallengesItem = ({ challenge, ...props }) => {
+  const {
+    tags,
+    title,
+    id,
+    start_date,
+    end_date,
+    description,
+    status,
+  } = challenge;
   const href = getLink(Screens.Idea, { id });
-  console.log("idea", idea);
+  console.log("challenge", challenge);
   return (
     <IdeaCard {...props}>
-      <LeftSide>
-        <VoteStyled rating={0} />
-      </LeftSide>
-      <RightSide>
-        <Link href={href}>
-          <IdeaTitle>{title}</IdeaTitle>
-        </Link>
-        <Description>{description}</Description>
-        <TagsContainer>
-          <TagsList tags={tags} />
-        </TagsContainer>
-        <InfoContainer>
-          <UserDateBlock date={getReadableTime(created_at)} />
-          <IdeaStatus status={status} />
-        </InfoContainer>
-      </RightSide>
+      <Link href={href}>
+        <IdeaTitle>{title}</IdeaTitle>
+      </Link>
+      <Description>{description}</Description>
+      <TagsContainer>
+        <TagsList tags={tags} />
+      </TagsContainer>
+      <InfoContainer>
+        <UserDateBlock
+          date={`${getReadableTime(start_date)} - ${getReadableTime(end_date)}`}
+        />
+        <IdeaStatus status={status} />
+      </InfoContainer>
     </IdeaCard>
   );
 };

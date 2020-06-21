@@ -5,6 +5,9 @@ import avatar1 from "../../assets/avatar1.png";
 import avatar2 from "../../assets/avatar2.png";
 import avatar3 from "../../assets/avatar3.jpg";
 import avatar4 from "../../assets/avatar4.png";
+import avatar6 from "../../assets/avatar6.png";
+import avatar7 from "../../assets/avatar7.png";
+import avatar8 from "../../assets/avatar8.png";
 
 
 function* getLeaderboardItemsSaga(action) {
@@ -12,7 +15,7 @@ function* getLeaderboardItemsSaga(action) {
     let payload = [
       {
         "id": 1,
-        "name": "Дима Демьянов",
+        "name": "Дмитрий Демьянов",
         "rating": 150,
         "avatarUri": avatar1
       },
@@ -30,9 +33,33 @@ function* getLeaderboardItemsSaga(action) {
       },
       {
         "id": 4,
-        "name": "Михуил Круглов",
+        "name": "Михаил Круглов",
         "rating": 325,
         "avatarUri": avatar4
+      },
+      {
+        "id": 5,
+        "name": "Ольгя Смирных",
+        "rating": 65,
+        "avatarUri": avatar8
+      },
+      {
+        "id": 6,
+        "name": "Дмитрий Авдеенко",
+        "rating": 10,
+        "avatarUri": avatar6
+      },
+      {
+        "id": 7,
+        "name": "Николай Петров",
+        "rating": 25,
+        "avatarUri": avatar7
+      },
+      {
+        "id": 8,
+        "name": "Иван Логачев",
+        "rating": 0,
+        "avatarUri": avatar8
       }
     ];
     // const payload = yield call(Api.get, action.payload.url);
