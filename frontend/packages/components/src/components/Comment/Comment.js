@@ -3,6 +3,7 @@ import styled from "styled-components/native";
 import { Text, Button, View } from "react-native";
 import { Card } from "../../components/Card/Card";
 import { TitleCard } from "../../components/Title/Title";
+import { Vote } from "../Vote/Vote";
 
 export const Comment = ({ title, id, text, user }) => {
   const Comment = styled(Card)`
@@ -15,13 +16,6 @@ export const Comment = ({ title, id, text, user }) => {
     padding-bottom: 10px;
   `;
 
-  const Rating = styled(View)`
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    width: 150px;
-    padding: ${({ theme }) => theme.paddingMedium}px;
-  `;
 
   const CommentText = styled(Text)`
     font-size: 16px;
@@ -34,11 +28,7 @@ export const Comment = ({ title, id, text, user }) => {
     <Comment>
       <UserName>{user.name}</UserName>
       <CommentText>{text}</CommentText>
-      <Rating>
-        <Button title={"up"} />
-        <Text>10</Text>
-        <Button title={"downn"} />
-      </Rating>
+      <Vote rating={10}></Vote>
     </Comment>
   );
 };
