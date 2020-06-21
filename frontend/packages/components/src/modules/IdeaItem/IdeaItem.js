@@ -1,13 +1,14 @@
-import React, { useCallback } from "react";
+import React from "react";
 import styled from "styled-components/native";
-import { View, Text, TouchableOpacity } from "react-native";
+import { View, Text } from "react-native";
 import { Card } from "../../components/Card/Card";
-import { TitleCard, TitleBlue } from "../../components/Title/Title";
+import { TitleBlue } from "../../components/Title/Title";
 import { Screens, getLink } from "../Navigation/constants";
 import { ButtonLink } from "../../components/ButtonLink/ButtonLink";
 import { TagsList } from "../TagsList/TagsList";
 import { getReadableTime } from "../../utils/getReadableTime";
 import { UserDateBlock } from "./UserDateBlock";
+import { IdeaStatus } from "./IdeaStatus";
 
 const IdeaCard = styled(Card)`
   flex-direction: column;
@@ -49,9 +50,9 @@ const Description = styled(Text)`
 `;
 
 export const IdeaItem = ({ idea, ...props }) => {
-  const { tags, title, id, created_at, description } = idea;
+  const { tags, title, id, created_at, description, status } = idea;
   const href = getLink(Screens.Idea, { id });
-  console.log("idea", idea.owner);
+  console.log("idea", idea);
   return (
     <IdeaCard {...props}>
       <Link href={href}>
@@ -63,6 +64,7 @@ export const IdeaItem = ({ idea, ...props }) => {
       </TagsContainer>
       <InfoContainer>
         <UserDateBlock date={getReadableTime(created_at)} />
+        <IdeaStatus status={status} />
       </InfoContainer>
     </IdeaCard>
   );
