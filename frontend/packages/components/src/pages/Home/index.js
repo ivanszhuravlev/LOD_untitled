@@ -3,6 +3,7 @@ import { View, Text } from "react-native";
 import { Home } from "../../modules/Home/";
 import { useDispatch } from "react-redux";
 import { fetchIdeasListAction } from "../../redux/actions/idea";
+import { fetchChallengesListAction } from "../../redux/actions/challenge";
 import { Block } from "../../components/Block/Block";
 
 export const HomeScreen = () => {
@@ -11,6 +12,7 @@ export const HomeScreen = () => {
   useEffect(() => {
     console.log('HOME')
     dispatch(fetchIdeasListAction());
+    dispatch(fetchChallengesListAction());
   }, []);
 
   return (

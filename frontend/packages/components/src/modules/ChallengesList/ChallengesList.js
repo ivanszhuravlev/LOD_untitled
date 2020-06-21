@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components/native";
 import { View, Text, FlatList } from "react-native";
 import { IdeaItem } from "../IdeaItem/IdeaItem";
-import { selectIdeas } from "../../redux/selectors/ideas";
+import { selectChallenges } from "../../redux/selectors/challenges";
 import { useSelector } from "../../hooks/use-selector/use-selector";
 import { Separator } from "../../components/Separator/Separator";
 import { Title } from "../../components/Title/Title";
@@ -23,8 +23,8 @@ const ChallengesTitle = styled(Title)`
 export const ChallengesList = () => {
   const renderItem = ({ item = {} }) => <IdeaItem idea={item} />;
   const keyExtractor = ({ id } = {}) => `ideaItem-${id}`;
-  const ideas = useSelector(selectIdeas);
-  console.log("list", ideas);
+  const ideas = useSelector(selectChallenges);
+  console.log("list challenges", ideas);
   return (
     <ChallengesCard>
       <ChallengesTitle>Задачи</ChallengesTitle>
