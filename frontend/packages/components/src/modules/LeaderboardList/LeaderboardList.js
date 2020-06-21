@@ -5,8 +5,8 @@ import { selectLeaderboardItems } from "../../redux/selectors/leaderboardItems";
 import { useSelector } from "../../hooks/use-selector/use-selector";
 
 export const LeaderboardList = () => {
-  const renderItem = ({ item: { id, num, name, rating } = {} }) => (
-    <LeaderboardItem id={id} num={num} name={name} rating={rating} />
+  const renderItem = ({ item: { id, num, name, rating, avatarUri } = {} }) => (
+    <LeaderboardItem id={id} num={num} name={name} rating={rating} avatarUri={avatarUri} />
   );
   const keyExtractor = ({ id } = {}) => `ideaItem-${id}`;
   let num = 0;
