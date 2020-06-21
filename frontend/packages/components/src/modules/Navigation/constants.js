@@ -1,7 +1,7 @@
 export const Screens = {
   Home: "Главная",
   Idea: "idea",
-  IdeaCreate: "idea/create",
+  CreateIdea: "СоздатьИдею",
   Leaderboard: "Лидеры",
   User: "Профиль",
 };
