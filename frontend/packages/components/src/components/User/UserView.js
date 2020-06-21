@@ -2,7 +2,7 @@ import React, { useCallback } from "react";
 import styled from "styled-components/native";
 import { Text, Button, View } from "react-native";
 import { Card } from "../../components/Card/Card";
-import { TitleCard } from "../../components/Title/Title";
+import { TitleCard, TitleBlue } from "../../components/Title/Title";
 import { Image } from "react-native";
 import { Statistic } from "./Statistic";
 import { UserTabs } from "./UserTabs";
@@ -13,6 +13,7 @@ const AvatarImage = styled(Image)`
   height: 200px;
   resize-mode: contain;
   border-radius: 100%;
+  align-self: center;
 `;
 
 const StatisticContainer = styled(View)`
@@ -20,26 +21,35 @@ const StatisticContainer = styled(View)`
 `;
 
 const Separator = styled(View)`
-  width: 1px;
-  background-color: #ff00ff;
+  width: 16px;
   height: 100%;
 `;
 
+const UserCard = styled(Card)`
+  align-items: stretch;
+`
+
+const Name = styled(TitleBlue)`
+  margin-top: ${({theme}) => theme.marginCard}px;
+  margin-bottom: ${({theme}) => theme.marginCard}px;
+  align-self: center;
+`
+
 export const UserView = () => {
-    return (
-        <Card>
-            <AvatarImage source={avatar} />
-            <Text>Давид</Text>
-            <StatisticContainer>
-                <Statistic number={0} desc={'рейтинг'} />
-                <Separator />
-                <Statistic number={0} desc={'коментариев'} />
-                <Separator />
-                <Statistic number={0} desc={'идей предложено'} />
-                <Separator />
-                <Statistic number={0} desc={'идей реализовано'} />
-            </StatisticContainer>
-            <UserTabs/>
-        </Card>
-    );
+  return (
+    <UserCard>
+      <AvatarImage source={avatar} />
+      <Name>Давид</Name>
+      <StatisticContainer>
+        <Statistic number={2} desc={"рейтинг"} />
+        <Separator />
+        <Statistic number={13} desc={"коментариев"} />
+        <Separator />
+        <Statistic number={1} desc={"идей предложено"} />
+        <Separator />
+        <Statistic number={0} desc={"идей реализовано"} />
+      </StatisticContainer>
+      <UserTabs />
+    </UserCard>
+  );
 };
