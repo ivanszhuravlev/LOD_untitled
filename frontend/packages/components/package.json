@@ -10,7 +10,7 @@
     "@react-navigation/native": "^5.5.1",
     "@react-navigation/stack": "5.5.1",
     "axios": "^0.19.2",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.21",
     "react-native-gesture-handler": "^1.6.1",
     "react-native-reanimated": "^1.9.0",
     "react-native-redash": "3.3.0",
